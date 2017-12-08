@@ -28,6 +28,7 @@ import android.support.annotation.RequiresApi;
 import android.support.annotation.VisibleForTesting;
 import android.support.v4.util.ArrayMap;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.inputmethod.EditorInfo;
 
 import com.anysoftkeyboard.addons.AddOn;
@@ -104,6 +105,7 @@ public class KeyboardSwitcher {
     // thus disabling the option to move to another layout
     private boolean mKeyboardLocked = false;
     private int mLastSelectedKeyboardIndex = 0;
+    private int mLastSelectedKeyboardType = 0;
     private boolean mAlphabetMode = true;
     @Nullable
     private EditorInfo mLastEditorInfo;
@@ -576,6 +578,13 @@ public class KeyboardSwitcher {
     public AnyKeyboard nextKeyboard(EditorInfo currentEditorInfo, NextKeyboardType type) {
         AnyKeyboard locked = getLockedKeyboard(currentEditorInfo);
         if (locked != null) return locked;
+
+        // just alternate between symbols and chars
+        mLastSelectedKeyboardType++;
+        if (mLastSelectedKeyboardType > 1) {
+            mLastSelectedKeyboardType = 0;
+            type = NextKeyboardType.Alphabet;
+        }
 
         switch (type) {
             case Alphabet:

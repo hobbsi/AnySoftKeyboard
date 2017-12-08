@@ -300,7 +300,8 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping i
     @SuppressLint("InflateParams")
     @Override
     public View onCreateCandidatesView() {
-        return getLayoutInflater().inflate(R.layout.candidates, null);
+        //return getLayoutInflater().inflate(R.layout.candidates, null);
+        return null;
     }
 
     @Override
@@ -726,7 +727,7 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping i
         }
     }
 
-    @Override
+    /*@Override
     public void setCandidatesViewShown(boolean shown) {
         // we show predication only in on-screen keyboard
         // (onEvaluateInputViewShown)
@@ -744,9 +745,9 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping i
                 mCandidatesParent.setAnimation(AnimationUtils.loadAnimation(this, R.anim.candidates_up_to_bottom_exit));
             }
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void setCandidatesView(@NonNull View view) {
         super.setCandidatesView(view);
         mCandidatesParent = view.getParent() instanceof View ? (View) view.getParent() : null;
@@ -794,7 +795,7 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping i
                 abortCorrectionAndResetPredictionState(true);
             }
         });
-    }
+    }*/
 
     private void clearSuggestions() {
         setSuggestions(null, false, false, false);

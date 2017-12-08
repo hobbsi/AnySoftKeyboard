@@ -484,8 +484,8 @@ public class AnyKeyboardView extends AnyKeyboardViewWithMiniKeyboard implements 
     }
 
     public void setWatermark(@Nullable String text) {
-        mWatermarkText = text;
-        mWatermarkTextWidth = -1;
-        invalidate();
+        //mWatermarkText = text;
+        //mWatermarkTextWidth = -1;
+        //invalidate();
     }
 }

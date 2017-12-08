@@ -120,8 +120,11 @@ public class KeyboardCondenser {
         return true;
     }
 
-    private void splitKeys(final int keyboardWidth, final int watershedLineX, final float condensingFactor) {
-        int currentLeftX = 0;
+    private void splitKeys(final int keyboardWidth, final int watershedLineX, float condensingFactor) {
+        condensingFactor = condensingFactor * 2;
+        int leftMargin = 250;
+
+        int currentLeftX = leftMargin;
         int currentRightX = keyboardWidth;
         int currentY = 0;
         Stack<Key> rightKeys = new Stack<>();
@@ -139,9 +142,10 @@ public class KeyboardCondenser {
                 condenseRightSide(condensingFactor, keyboardWidth,
                         currentRightX, rightKeys, spaceKey);
 
-                currentLeftX = 0;
+                currentLeftX = leftMargin;
                 currentRightX = keyboardWidth;
                 currentY = k.y;
+
                 rightKeys.clear();
             }
 
@@ -191,6 +195,7 @@ public class KeyboardCondenser {
         k.x = currentLeftX;
         k.width = targetWidth;
         currentLeftX += k.width;
+        currentLeftX += 4;
         return currentLeftX;
     }
 
