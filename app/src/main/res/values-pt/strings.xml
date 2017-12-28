@@ -279,12 +279,12 @@ no ecrã (pode ser necessário reiniciar)    </string>
   <!-- settings - keyboard group -->
   <string name="keyboards_group">Teclados</string>
   <string name="symbols_keyboard">123!#()</string>
-  <string name="symbols_alt_keyboard">{}\_</string>
+  <string name="symbols_alt_keyboard">abc\_</string>
   <string name="symbols_alt_num_keyboard">123</string>
   <string name="symbols_phone_keyboard">telefone</string>
   <string name="symbols_numbers_keyboard">123</string>
   <string name="symbols_time_keyboard">hora</string>
-  <string name="eng_keyboard">Inglês</string>
+  <string name="eng_keyboard">&#160;</string>
   <string name="keyboard_change_locked">n/d</string>
   <string name="selected_add_on_summary">A utilizar \'<xliff:g id="addOnName">%s</xliff:g>\'
     

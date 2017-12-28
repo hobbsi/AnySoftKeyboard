@@ -348,6 +348,7 @@ public class KeyboardSwitcher {
                 // 2) this is a restarting, but the mode changed (probably to Normal).
                 if ((!restarting) || keyboardGlobalModeChanged) {
                     mAlphabetMode = true;
+                    mLastSelectedKeyboardType = 0;
                     keyboard = getAlphabetKeyboard(mLastSelectedKeyboardIndex, attr);
                 } else {
                     // just keep doing what you did before.
@@ -579,6 +580,7 @@ public class KeyboardSwitcher {
         AnyKeyboard locked = getLockedKeyboard(currentEditorInfo);
         if (locked != null) return locked;
 
+        System.out.println("mLastSelectedKeyboardType: " + mLastSelectedKeyboardType);
         // just alternate between symbols and chars
         mLastSelectedKeyboardType++;
         if (mLastSelectedKeyboardType > 1) {
